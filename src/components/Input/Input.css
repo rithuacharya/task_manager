@@ -1,0 +1,29 @@
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input {
+  line-height: 1;
+  padding-top: 1rem;
+  
+}
+
+.input-wrapper label {
+  position: absolute;
+  top: 0;
+  transform: translate(12px, 12px);
+  line-height: 1;
+  transition: all 0.3s;
+  font-size: 14px;
+}
+
+.input-wrapper input:focus + label,
+.input-wrapper input:valid + label {
+  font-size: 10px;
+  transform: translate(12px, 4px);
+}
+
+.input-wrapper input:-webkit-autofill + label {
+  font-size: 10px;
+  transform: translate(12px, 4px);
+}

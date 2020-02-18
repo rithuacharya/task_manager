@@ -1,3 +1,16 @@
+# Task Manager
+
+Web App that allows you to keep track of your task with options of creating, updating and deleting task.
+
+## How to use it
+
+Run the server using the command
+### `npm run start-server`
+This creates a server in [localhost:3001](http://localhost:3001) which access the file db.json, allowing you to perform CRUD operations on it using json-server
+
+In a separate command-line interface run the app using the command
+### `npm start`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

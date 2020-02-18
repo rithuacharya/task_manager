@@ -1,0 +1,10 @@
+.check-mark,
+.x-mark {
+  border: none;
+  background-color: transparent;
+}
+
+.check-mark:focus,
+.x-mark:focus {
+  outline: none;
+}
