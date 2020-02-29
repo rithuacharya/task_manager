@@ -5,8 +5,9 @@ import Task from "../Task/Task";
 
 class CompletedTasks extends Component {
   displayCompletedTasks = () => {
-    if(this.props.tasks.length) {
-      let data = this.props.tasks.map(task => {
+    let {tasks, error, loading} = this.props;
+    if(tasks.length) {
+      let data = tasks.map(task => {
         return (
           <Task key={task.id} taskInfo={task}/>
         );
@@ -16,8 +17,12 @@ class CompletedTasks extends Component {
           {data}
         </div>
       )
-    } else {
+    } else if(!loading && !error && !tasks.length) {
       return <h4 className="text-center">None of the tasks are completed</h4>;
+    } else if(error) {
+      return <div>Error: couldn't load data</div>;
+    } else {
+      return null;
     }
   }
   render() {
@@ -34,7 +39,9 @@ class CompletedTasks extends Component {
 
 const mapStateToProps = state => {
   return {
-    tasks: state.tasks.filter(task => task.completed)
+    tasks: state.tasks.filter(task => task.completed),
+    error: state.modal.info.title === "Error",
+    loading: state.loading
   };
 };
 

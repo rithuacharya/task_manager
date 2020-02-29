@@ -7,6 +7,8 @@ import CompletedTasks from "../CompletedTasks/CompletedTasks";
 import CreateTask from "../CreateTask/CreateTask";
 import {connect} from "react-redux";
 import history from "../../history";
+import Modal from "../Modal/Modal";
+import Loader from "../Loader/Loader";
 import {
   getTasks
 } from "../../actions";
@@ -22,6 +24,8 @@ class App extends React.Component {
     return (
       <div className="container-lg mb-3">
         <Header />
+        <Modal />
+        <Loader />
         <Router history={history}>
           <Switch>
             <Route exact path="/" component={AllTasks} />
